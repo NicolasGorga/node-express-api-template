@@ -21,7 +21,9 @@
         }
     },
     "lint-staged": {
-        "*": "npm run lint-write && npm run test"
+        "*": [
+            "npm run lint-format"
+        ]
     },
     "author": "Nicolas Gorga",
     "license": "ISC",
