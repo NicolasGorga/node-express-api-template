@@ -1,0 +1,43 @@
+{
+    "name": "universal-clothing-api",
+    "version": "1.0.0",
+    "description": "Node Express API for universal clothing client apps",
+    "main": "dist/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prepare": "husky install",
+        "start": "npm run nodemon",
+        "build": "tsc",
+        "nodemon": "nodemon --watch \"*.ts\" --exec \"ts-node\" ./src/index.ts",
+        "lint-check": "eslint src/**/*.ts --no-fix",
+        "lint-write": "eslint src/**/*.ts --fix",
+        "prettier-check": "prettier . --check",
+        "prettier-write": "prettier . --write",
+        "lint-format": "npm run lint-write && npm run prettier-write"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+      "*": "npm run lint-write && npm run test"
+    },
+    "author": "Nicolas Gorga",
+    "license": "ISC",
+    "devDependencies": {
+        "@tsconfig/node20": "^20.1.2",
+        "@types/node": "^20.10.4",
+        "@typescript-eslint/eslint-plugin": "^6.13.2",
+        "@typescript-eslint/parser": "^6.13.2",
+        "eslint": "^8.55.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-prettier": "^5.0.1",
+        "husky": "^8.0.3",
+        "lint-staged": "^15.2.0",
+        "nodemon": "^3.0.2",
+        "prettier": "^3.1.0",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.3.3"
+    }
+}
